@@ -11,6 +11,7 @@ import { PolizasModule } from './polizas/polizas.module';
 import { ReclamosModule } from './reclamos/reclamos.module';
 import { AgentesModule } from './agentes/agentes.module';
 import { MongooseModule } from '@nestjs/mongoose';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { MongooseModule } from '@nestjs/mongoose';
     PolizasModule,
     ReclamosModule,
     AgentesModule,
+    AuthModule,
   ],
   controllers: [
     AppController,
