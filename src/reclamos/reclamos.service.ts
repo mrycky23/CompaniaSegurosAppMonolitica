@@ -2,11 +2,12 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { IReclamos } from './reclamos.interface';
 import { Model } from 'mongoose';
+import { RECLAMOS } from 'src/models/models';
 
 @Injectable()
 export class ReclamosService {
   constructor(
-    @InjectModel('Reclamos') private readonly reclamosModel: Model<IReclamos>,
+    @InjectModel(RECLAMOS.name) private readonly reclamosModel: Model<IReclamos>,
   ) {}
 
   async create(reclamo: IReclamos): Promise<IReclamos> {

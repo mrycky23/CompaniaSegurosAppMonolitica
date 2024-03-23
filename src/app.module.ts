@@ -12,6 +12,7 @@ import { ReclamosModule } from './reclamos/reclamos.module';
 import { AgentesModule } from './agentes/agentes.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { AuthModule } from './auth/auth.module';
       isGlobal: true,
     }),
     MongooseModule.forRoot(process.env.uri_mongo),
+    UsersModule,
     ClientesModule,
     PolizasModule,
     ReclamosModule,

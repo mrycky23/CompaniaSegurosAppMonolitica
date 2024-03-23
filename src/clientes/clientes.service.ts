@@ -3,11 +3,12 @@ import { InjectModel } from '@nestjs/mongoose';
 import { IClientes } from './clientes.interface';
 import { Model } from 'mongoose';
 import { CreateClienteDTO, UpdateClienteDTO } from './dto/clientes.dto';
+import { CLIENTE, USER } from 'src/models/models';
 
 @Injectable()
 export class ClientesService {
   constructor(
-    @InjectModel('Cliente') private readonly clienteModel: Model<IClientes>,
+    @InjectModel(CLIENTE.name) private readonly clienteModel: Model<IClientes>,
   ) {}
   async findAll(): Promise<IClientes[]> {
     return this.clienteModel.find().exec();

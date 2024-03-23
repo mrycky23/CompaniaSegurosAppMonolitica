@@ -8,6 +8,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.useGlobalFilters(new AllExceptionFilter());
   app.useGlobalInterceptors(new TimeOutInterceptor());
+  app.enableCors();
   const opciones = new DocumentBuilder()
     .setTitle('Vuelos API')
     .setDescription('Document de vuelos API')

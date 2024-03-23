@@ -3,11 +3,12 @@ import { InjectModel } from '@nestjs/mongoose';
 import { IAgentes } from './agentes.interface';
 import { Model } from 'mongoose';
 import { CreateAgenteDTO, UpdateAgenteDTO } from './dto/agentes.dto';
+import { AGENTES } from 'src/models/models';
 
 @Injectable()
 export class AgentesService {
   constructor(
-    @InjectModel('Agente') private readonly agenteModel: Model<IAgentes>,
+    @InjectModel(AGENTES.name) private readonly agenteModel: Model<IAgentes>,
   ) {}
 
   async findAll(): Promise<IAgentes[]> {
